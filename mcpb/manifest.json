@@ -1,0 +1,68 @@
+{
+  "manifest_version": "0.3",
+  "name": "cursor-mcp",
+  "version": "0.2.0",
+  "description": "Cursor platform API MCP — spend guardrails (cursor_usage), cloud agent monitoring (cursor_cloud), inter-agent inbox (cursor_inbox), and Jun 2026 SDK/docs guidance. HTTP :11000 for Fritz; stdio for Cursor IDE.",
+  "author": {
+    "name": "Sandra Schipal",
+    "url": "https://github.com/sandraschi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandraschi/cursor-mcp.git"
+  },
+  "homepage": "https://github.com/sandraschi/cursor-mcp",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "cursor",
+    "fastmcp",
+    "spend-guardrails",
+    "cloud-agents",
+    "inbox",
+    "fleet"
+  ],
+  "server": {
+    "type": "python",
+    "entry_point": "src/cursor_mcp/__main__.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "${__dirname}",
+        "run",
+        "cursor-mcp",
+        "--stdio"
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "cursor_usage",
+      "description": "Spend guardrails — summary, spend, events, alert_check, limits, me"
+    },
+    {
+      "name": "cursor_cloud",
+      "description": "Cloud agent monitoring — list, status, runs, cancel"
+    },
+    {
+      "name": "cursor_inbox",
+      "description": "Inter-agent filesystem inbox — post, list, read, ack, ack_all, purge"
+    },
+    {
+      "name": "cursor_docs",
+      "description": "Fleet doc snippets for Cursor platform topics"
+    },
+    {
+      "name": "cursor_sdk",
+      "description": "Jun 2026 SDK guidance — capabilities, upgrade_notes, autoreview_template"
+    },
+    {
+      "name": "cursor_help",
+      "description": "Tool index and setup reference"
+    }
+  ]
+}

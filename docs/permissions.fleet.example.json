@@ -1,0 +1,16 @@
+{
+  "autoRun": {
+    "allow_instructions": [
+      "Read-only inspections of build artifacts under ./dist are fine.",
+      "cursor_usage with operation summary, limits, or alert_check is always allowed.",
+      "cursor_inbox with operation list or read is always allowed.",
+      "Read-only git status, log, and diff are fine."
+    ],
+    "block_instructions": [
+      "Always pause delete operations, rm -rf, and Remove-Item -Recurse.",
+      "Pause docker compose down, git push, and any production deploy.",
+      "Pause file_ops write/delete and container_ops stop/remove unless explicitly approved.",
+      "Pause cursor_inbox ack_all and purge unless explicitly approved."
+    ]
+  }
+}

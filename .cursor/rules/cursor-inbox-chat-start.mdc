@@ -1,0 +1,16 @@
+---
+description: Poll cursor_inbox at Cursor chat start (this repo's MCP server)
+alwaysApply: true
+---
+
+# cursor-mcp inbox at chat start
+
+This repo ships **`cursor_inbox`** — a filesystem message drop at `~/.cursor-mcp/inbox/` (override: `CURSOR_INBOX_DIR`).
+
+At the **start of every Cursor chat** in this workspace:
+
+1. Call `cursor_inbox` `operation=list` if the MCP tool is available.
+2. Otherwise read unread JSON files in the inbox directory (not `acked/`).
+3. Surface unread messages before other work; `ack` when handled.
+
+See `src/cursor_mcp/tools/inbox.py` and `PRD.md` for schema and workflow.
