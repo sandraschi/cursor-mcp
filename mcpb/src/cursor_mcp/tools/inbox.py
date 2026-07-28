@@ -24,7 +24,7 @@ from __future__ import annotations
 import json
 import os
 import uuid
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Annotated, Any, Literal
 
@@ -56,11 +56,11 @@ def _inbox_root() -> Path:
 
 
 def _now_iso() -> str:
-    return datetime.now(tz=UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def _stamp() -> str:
-    return datetime.now(tz=UTC).strftime("%Y%m%dT%H%M%S")
+    return datetime.now(tz=timezone.utc).strftime("%Y%m%dT%H%M%S")
 
 
 def _msg_filename(sender: str, msg_id: str) -> str:
@@ -114,16 +114,12 @@ def _msg_summary(msg: dict[str, Any], path: Path) -> dict[str, Any]:
 async def cursor_inbox(
     operation: Annotated[Operation, Field(description="Inbox operation.")],
     # post
-    sender: Annotated[
-        str, Field(description="Sender identity (e.g. 'claude-desktop', 'meta_mcp', 'sandra').")
-    ] = "unknown",
+    sender: Annotated[str, Field(description="Sender identity (e.g. 'claude-desktop', 'meta_mcp', 'sandra').")] = "unknown",
     subject: Annotated[str, Field(description="One-line subject.")] = "",
     body: Annotated[str, Field(description="Message body — plain text or markdown.")] = "",
     priority: Annotated[Priority, Field(description="Message priority.")] = "normal",
     tags: Annotated[list[str], Field(description="Optional tags e.g. ['meta_mcp', 'cold-install', 'heads-up'].")] = [],  # noqa: B006
-    payload: Annotated[
-        dict[str, Any] | None, Field(description="Optional structured data attached to the message.")
-    ] = None,
+    payload: Annotated[dict[str, Any] | None, Field(description="Optional structured data attached to the message.")] = None,
     # read / ack
     msg_id: Annotated[str | None, Field(description="Message id for read/ack.")] = None,
     # list
@@ -271,7 +267,7 @@ async def cursor_inbox(
     # PURGE
     # ------------------------------------------------------------------
     if operation == "purge":
-        cutoff = datetime.now(tz=UTC) - timedelta(days=older_than_days)
+        cutoff = datetime.now(tz=timezone.utc) - timedelta(days=older_than_days)
         acked_dir = root / "acked"
         removed = 0
         for p in acked_dir.glob("*.json"):

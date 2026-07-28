@@ -1,6 +1,7 @@
+from pathlib import Path
+
 from cursor_mcp.alerts import evaluate_alerts, sum_event_cents
 from cursor_mcp.config import Settings
-from pathlib import Path
 
 
 def _settings() -> Settings:

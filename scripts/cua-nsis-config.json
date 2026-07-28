@@ -1,0 +1,14 @@
+{
+    "product_name": "Cursor MCP",
+    "install_dir": "%LOCALAPPDATA%\\Cursor MCP",
+    "operator_exe": "cursor-mcp-native.exe",
+    "backend_process_names": ["cursor-mcp-native", "cursor-mcp-backend"],
+    "backend_port": 11000,
+    "health_path": "/api/v1/health",
+    "diagnostics_path": "/api/v1/diagnostics",
+    "feature_smoke_path": "/api/v1/system/info",
+    "window_title_re": "Cursor MCP",
+    "nsis_glob": "native/target/release/bundle/nsis/Cursor MCP_*_x64-setup.exe",
+    "bridge_ok_text": "REST bridge reachable",
+    "uninstall_registry_filter": "*Cursor MCP*"
+}

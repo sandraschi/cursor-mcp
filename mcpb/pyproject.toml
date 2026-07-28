@@ -11,7 +11,7 @@ requires-python = ">=3.12"
 license = { text = "MIT" }
 authors = [{ name = "Sandra Schipal" }]
 dependencies = [
-    "fastmcp>=3.4.4,<4",
+    "fastmcp>=3.2.0,<4",
     "httpx>=0.28.0",
     "pydantic>=2.0.0",
     "fastapi>=0.115.0",
@@ -39,12 +39,12 @@ select = ["E", "F", "I", "N", "W", "UP"]
 dev = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.24.0",
-    "ruff>=0.16.0,<0.17",
+    "ruff>=0.8.0",
 ]
 
 [dependency-groups]
 dev = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.24.0",
-    "ruff>=0.16.0,<0.17",
+    "ruff>=0.8.0",
 ]

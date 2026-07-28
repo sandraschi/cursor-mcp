@@ -91,10 +91,7 @@ _SNIPPETS: dict[str, dict[str, Any]] = {
             "sent_at": "ISO8601 UTC",
         },
         "workflow": "post → list (agent polls at start) → read → ack",
-        "note": (
-            "cursor_inbox is only needed to READ from Cursor. "
-            "Any process can WRITE by dropping a JSON file or calling post."
-        ),
+        "note": "cursor_inbox is only needed to READ from Cursor. Any process can WRITE by dropping a JSON file or calling post.",
     },
     "sdk-jun-2026": {
         "title": "SDK Jun 2026",

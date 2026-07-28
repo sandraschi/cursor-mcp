@@ -61,15 +61,15 @@ def evaluate_alerts(
     monthly_limit = (spend_row or {}).get("monthlyLimitDollars")
 
     if hourly_cents >= settings.hourly_spend_warn_cents:
-        hourly_usd = _cents_to_usd(hourly_cents)
-        warn_usd = _cents_to_usd(settings.hourly_spend_warn_cents)
-        reasons.append(f"Hourly spend ${hourly_usd:.2f} >= warn ${warn_usd:.2f}")
+        reasons.append(
+            f"Hourly spend ${_cents_to_usd(hourly_cents):.2f} >= warn ${_cents_to_usd(settings.hourly_spend_warn_cents):.2f}"
+        )
         level = "warn"
 
     if on_demand_cents >= settings.on_demand_warn_cents:
-        on_demand_usd = _cents_to_usd(on_demand_cents)
-        warn_usd = _cents_to_usd(settings.on_demand_warn_cents)
-        reasons.append(f"On-demand ${on_demand_usd:.2f} >= warn ${warn_usd:.2f}")
+        reasons.append(
+            f"On-demand ${_cents_to_usd(on_demand_cents):.2f} >= warn ${_cents_to_usd(settings.on_demand_warn_cents):.2f}"
+        )
         level = "warn"
 
     if running_agents >= settings.running_agents_warn:

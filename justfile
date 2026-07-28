@@ -1,8 +1,8 @@
-# cursor-mcp — just recipes
+set windows-shell := ["powershell.exe", "-NoProfile", "-Command"]
 
-# Build .mcpb Claude Desktop bundle
-mcpb-pack:
-    pwsh.exe -NoProfile -ExecutionPolicy Bypass -File .\mcpb\pack.ps1
+# cursor-mcp — just recipes
+import 'scripts/just/fleet.just'
+# cursor-mcp — just recipes
 
 # Lint
 lint:

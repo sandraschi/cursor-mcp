@@ -1,13 +1,3 @@
-
-## [Unreleased] — 2026-06-14
-
-### Added
-- Tauri 2.0 native wrapper with `bundle.resources` + `std::process::Command`
-- PyInstaller frozen backend embedded in NSIS installer
-- CUA-NSIS smoke test (`scripts/cua-smoke.py`, `scripts/cua-nsis-config.json`)
-- `just cua-nsis-test` recipe
-- Tauri CORS: `tauri://localhost` origins for WebView API access
-- `GET /api/v1/diagnostics` endpoint for CUA verification
 # cursor-mcp — CHANGELOG
 
 ## v0.2.0 — 2026-06-07
@@ -68,4 +58,3 @@
 - HTTP surface on port 11000 for Fritz `fleet_bridge`
 - Fritz scheduled task `coworker_cursor_spend_watch` (every 2h)
 - `docs/FRITZ_INTEGRATION.md`
-
