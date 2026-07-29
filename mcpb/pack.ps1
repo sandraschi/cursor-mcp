@@ -1,4 +1,4 @@
-# MCPB pack script — sync src into mcpb/, then mcpb pack to dist/.
+# MCPB pack script - sync src into mcpb/, then mcpb pack to dist/.
 # Run from repo root:  .\mcpb\pack.ps1
 $ErrorActionPreference = "Stop"
 $repoRoot = (Get-Item $PSScriptRoot).Parent.FullName
