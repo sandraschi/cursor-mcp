@@ -1,4 +1,4 @@
-"""cursor_cloud portmanteau — cloud agent monitoring."""
+"""cursor_cloud portmanteau - cloud agent monitoring."""
 
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ async def cursor_cloud(
 ) -> dict[str, Any]:
     """List and inspect Cursor cloud agents (read-first; cancel is gated).
 
-    Runaway spend often correlates with many parallel cloud agents — list often.
+    Runaway spend often correlates with many parallel cloud agents - list often.
     """
     client = CursorClient()
 

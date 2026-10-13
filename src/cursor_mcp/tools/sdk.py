@@ -1,4 +1,4 @@
-"""cursor_sdk — fleet guidance for @cursor/sdk / cursor-sdk (Jun 2026)."""
+"""cursor_sdk - fleet guidance for @cursor/sdk / cursor-sdk (Jun 2026)."""
 
 from __future__ import annotations
 
@@ -40,7 +40,7 @@ _CAPABILITIES = {
     },
     "stores": ["SqliteLocalAgentStore", "JsonlLocalAgentStore", "LocalAgentStore (custom)"],
     "nested_subagents": "Automatic; subagents inherit parent custom tools",
-    "run_correlation": "requestId on every send() — log alongside cursor-mcp spend checks",
+    "run_correlation": "requestId on every send() - log alongside cursor-mcp spend checks",
     "models": "composer-2 slugs auto-route to composer-2.5",
     "python_fixes": ["workspace-scoped list_runs(cwd=...)", "clearer not-found errors"],
 }
@@ -49,7 +49,7 @@ _UPGRADE_NOTES = [
     "Jun 4 2026: customTools, autoReview, JSONL stores, nested subagents",
     "Jun 4 2026: requestId on Run/RunResult for log correlation",
     "Jun 4 2026: reliable wait() on local runs; cloud HTTP/1.1 streaming fix",
-    "Jun 4 2026: Python cursor-sdk 0.1.6 — workspace list_runs cwd",
+    "Jun 4 2026: Python cursor-sdk 0.1.6 - workspace list_runs cwd",
     "Upgrade: npm install @cursor/sdk | pip install -U cursor-sdk",
     "MCD: mcp-central-docs/ecosystem/cursor/CHANGELOG_DIGEST_JUN_2026.md",
 ]
@@ -61,7 +61,7 @@ async def cursor_sdk(
     """Fleet-curated @cursor/sdk / cursor-sdk guidance (read-only, no agent spawn).
 
     Jun 2026 SDK release: custom tools, auto-review, JSONL stores, nested subagents.
-    Use before writing new headless automation — complements cursor_docs topics.
+    Use before writing new headless automation - complements cursor_docs topics.
     """
     if operation == "capabilities":
         return {
@@ -114,7 +114,7 @@ async def cursor_sdk(
             "stores": {
                 "sqlite": "Default; good for resume on same machine",
                 "jsonl": "Append-only; diff and VCS friendly",
-                "custom": "Postgres, in-memory CI — implement LocalAgentStore",
+                "custom": "Postgres, in-memory CI - implement LocalAgentStore",
             },
             "message": "Agent/run persistence options",
         }

@@ -46,12 +46,12 @@ class CursorClient:
             raise CursorApiError("Invalid Cursor API key", status_code=401)
         if response.status_code == 403:
             raise CursorApiError(
-                "Cursor API forbidden — Admin API may require Team/Enterprise key",
+                "Cursor API forbidden - Admin API may require Team/Enterprise key",
                 status_code=403,
                 hint="Create Admin API key at cursor.com/dashboard → Settings → Advanced → Admin API Keys",
             )
         if response.status_code == 429:
-            raise CursorApiError("Cursor API rate limited — back off and retry", status_code=429)
+            raise CursorApiError("Cursor API rate limited - back off and retry", status_code=429)
         if not response.is_success:
             detail = response.text[:500]
             raise CursorApiError(f"Cursor API error {response.status_code}: {detail}", status_code=response.status_code)

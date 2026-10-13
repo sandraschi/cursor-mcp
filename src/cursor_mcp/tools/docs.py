@@ -34,7 +34,7 @@ _SNIPPETS: dict[str, dict[str, Any]] = {
     },
     "profiles": {
         "title": "Public Profiles",
-        "summary": "cursor.com/@handle — not billing or multi-account.",
+        "summary": "cursor.com/@handle - not billing or multi-account.",
         "url": "https://cursor.com/help/account-and-billing/profiles",
         "mcd": "mcp-central-docs/ecosystem/cursor/PROFILES.md",
     },
@@ -63,7 +63,7 @@ _SNIPPETS: dict[str, dict[str, Any]] = {
         "port": 11000,
     },
     "cursor-inbox": {
-        "title": "cursor_inbox — inter-agent message drop",
+        "title": "cursor_inbox - inter-agent message drop",
         "summary": "Filesystem drop dir for structured messages to Cursor agents. No daemon, no network.",
         "drop_dir": "CURSOR_INBOX_DIR env (default ~/.cursor-mcp/inbox/)",
         "operations": {
@@ -108,13 +108,13 @@ _SNIPPETS: dict[str, dict[str, Any]] = {
         "title": "Design Mode",
         "summary": "Browser + canvas: multi-select DOM, voice while agent runs, annotate UI.",
         "url": "https://cursor.com/changelog",
-        "fleet_use": "Wrapper webapp repos — point at elements instead of prose prompts",
+        "fleet_use": "Wrapper webapp repos - point at elements instead of prose prompts",
         "browser": "Multi-select elements; voice queues next change mid-run",
         "canvas": "Same annotate model inside agent canvases",
     },
     "auto-review": {
         "title": "Auto-review",
-        "summary": "IDE run mode + SDK local.autoReview — classifier for Shell/MCP/Fetch.",
+        "summary": "IDE run mode + SDK local.autoReview - classifier for Shell/MCP/Fetch.",
         "ide": "Settings → Agents → Run Mode → Auto-review",
         "sdk": "local.autoReview + permissions.json",
         "example": "cursor-mcp/docs/permissions.fleet.example.json",
@@ -122,13 +122,13 @@ _SNIPPETS: dict[str, dict[str, Any]] = {
     },
     "context-canvas": {
         "title": "Context usage canvas",
-        "summary": "Interactive token breakdown — rules, skills, MCP tools, system prompt.",
+        "summary": "Interactive token breakdown - rules, skills, MCP tools, system prompt.",
         "fleet_use": "Run before enabling more MCPs; Debug with Agent to trim bloat",
         "pairs_with": "cursor_usage alert_check + this canvas for diagnosis",
     },
     "changelog-jun-2026": {
         "title": "Changelog digest Jun 2026",
-        "summary": "Fleet adoption guide for 3.6–3.7 releases.",
+        "summary": "Fleet adoption guide for 3.6-3.7 releases.",
         "mcd": "mcp-central-docs/ecosystem/cursor/CHANGELOG_DIGEST_JUN_2026.md",
         "priority": ["IDE auto-review", "context canvas", "SDK autoReview for CI", "Design Mode webapps"],
     },
@@ -167,11 +167,11 @@ async def cursor_help() -> dict[str, Any]:
             "cursor_inbox": ["post", "list", "read", "ack", "ack_all", "purge"],
         },
         "auth": {
-            "CURSOR_API_KEY": "User key — cloud agents /v1/*",
-            "CURSOR_ADMIN_API_KEY": "Team admin key — /teams/spend, usage events",
+            "CURSOR_API_KEY": "User key - cloud agents /v1/*",
+            "CURSOR_ADMIN_API_KEY": "Team admin key - /teams/spend, usage events",
         },
         "inbox_dir": "CURSOR_INBOX_DIR env (default ~/.cursor-mcp/inbox/)",
         "fritz_task": "coworker_cursor_spend_watch (every 2h, Europe/Vienna)",
         "changelog_digest": "mcp-central-docs/ecosystem/cursor/CHANGELOG_DIGEST_JUN_2026.md",
-        "message": "cursor-mcp v0.2.0 — spend guardrails + inbox + Jun 2026 SDK/docs",
+        "message": "cursor-mcp v0.2.0 - spend guardrails + inbox + Jun 2026 SDK/docs",
     }

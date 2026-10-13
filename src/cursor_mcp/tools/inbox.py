@@ -1,10 +1,10 @@
-"""cursor_inbox — structured inter-agent message drop for Cursor agents.
+"""cursor_inbox - structured inter-agent message drop for Cursor agents.
 
 Drop directory: CURSOR_INBOX_DIR (default %USERPROFILE%/.cursor-mcp/inbox/)
 
 Any process (Claude Desktop, meta_mcp, a PS1 script, another agent) writes a
 JSON message file to the inbox dir. The Cursor agent calls cursor_inbox to read
-and acknowledge messages. No polling daemon, no network — pure filesystem drop.
+and acknowledge messages. No polling daemon, no network - pure filesystem drop.
 
 Message file format: <timestamp>-<sender>-<id>.json
 Schema: InboxMessage (see below).
@@ -118,7 +118,7 @@ async def cursor_inbox(
         str, Field(description="Sender identity (e.g. 'claude-desktop', 'meta_mcp', 'sandra').")
     ] = "unknown",
     subject: Annotated[str, Field(description="One-line subject.")] = "",
-    body: Annotated[str, Field(description="Message body — plain text or markdown.")] = "",
+    body: Annotated[str, Field(description="Message body - plain text or markdown.")] = "",
     priority: Annotated[Priority, Field(description="Message priority.")] = "normal",
     tags: Annotated[list[str], Field(description="Optional tags e.g. ['meta_mcp', 'cold-install', 'heads-up'].")] = [],  # noqa: B006
     payload: Annotated[
@@ -143,7 +143,7 @@ async def cursor_inbox(
       - Cursor agent calls 'read' for detail, then 'ack' when handled.
       - Periodic 'purge' to clean old acked messages.
 
-    No daemon, no network — pure filesystem. Default dir: ~/.cursor-mcp/inbox/
+    No daemon, no network - pure filesystem. Default dir: ~/.cursor-mcp/inbox/
     Override with CURSOR_INBOX_DIR env var.
     """
     root = _inbox_root()
@@ -175,7 +175,7 @@ async def cursor_inbox(
             "id": msg_id_new,
             "filename": filename,
             "path": str(path),
-            "message": f"Message posted — id {msg_id_new[:8]}",
+            "message": f"Message posted - id {msg_id_new[:8]}",
         }
 
     # ------------------------------------------------------------------
@@ -218,7 +218,7 @@ async def cursor_inbox(
             "message_data": msg,
             "acked": "acked" in str(path),
             "filename": path.name,
-            "message": f"Message {msg_id[:8]} — {msg.get('subject', '')}",
+            "message": f"Message {msg_id[:8]} - {msg.get('subject', '')}",
         }
 
     # ------------------------------------------------------------------

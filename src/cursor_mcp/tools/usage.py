@@ -1,4 +1,4 @@
-"""cursor_usage portmanteau — spend guardrails."""
+"""cursor_usage portmanteau - spend guardrails."""
 
 from __future__ import annotations
 
@@ -125,7 +125,7 @@ async def cursor_usage(
                 "events": events_error,
                 "agents": agents_error,
             },
-            "message": f"Alert level: {alert['level']} — {'; '.join(alert['reasons'])}",
+            "message": f"Alert level: {alert['level']} - {'; '.join(alert['reasons'])}",
         }
 
     # summary
@@ -143,5 +143,5 @@ async def cursor_usage(
             "agents": agents_error,
         },
         "cache_path": str(settings.cache_path),
-        "message": f"Summary — alert {alert['level']}, {running_agents} active cloud agents",
+        "message": f"Summary - alert {alert['level']}, {running_agents} active cloud agents",
     }
